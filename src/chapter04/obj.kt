@@ -11,6 +11,7 @@ package chapter04
  */
 class Driver
 
+
 interface OnExternalDriverMountListener {
     fun onMount(driver: Driver)
 
@@ -40,6 +41,8 @@ fun stop() {
 fun main(args: Array<String>) {
     val m1 = MusicPlayer
     val m2 = MusicPlayer
+    m1.onMount(Driver())
+
     println(m1 == m2)
 
 }

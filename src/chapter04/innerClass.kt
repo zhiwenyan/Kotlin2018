@@ -46,6 +46,7 @@ class View {
 fun main(args: Array<String>) {
     val inner = Outter().innerClass()
     inner.Hello()
+    val clz=Outter.innerClass1()
     val view = View()
     //匿名内部类
     view.onClickListener = object : OnClickListener {

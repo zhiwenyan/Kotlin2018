@@ -9,11 +9,11 @@ fun main(vararg args: String) {
     for (arg in args) {
         println(arg)
     }
-    hello(1, 2, 3, 4, 5, string = "1")
+    hello(1, 2, 3, 4, 5, str = "1")
 
 }
 
-fun hello(vararg ints: Int, string: String) {
+fun hello(vararg ints: Int, str: String) {
     ints.forEach(::println)
-    println(string)
+    println(str)
 }

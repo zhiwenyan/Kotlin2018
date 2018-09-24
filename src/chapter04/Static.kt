@@ -30,9 +30,8 @@ class Latitude private constructor(val value: Double) {
         fun ofLatitude(latitude: Latitude): Latitude {
             return Latitude(latitude.value)
         }
-
-        //定义一个静态变量
         @JvmField
+        //定义一个静态变量
         val TAG: String = "Latitude"
     }
 }
