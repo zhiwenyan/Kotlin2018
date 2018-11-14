@@ -1,7 +1,8 @@
 package chapter05
 
 /**
- * Description:  闭包：函数式编程的福音
+ * Description:
+ * 闭包：函数式编程的福音
  * 函数的运行环境
  * 持有函数运行状态
  * 函数内部定义函数
@@ -23,26 +24,15 @@ fun fibonacci(): () -> Long {
     var first = 0L
     var second = 1L
     return fun(): Long {
-        var result = second
+        val result = second
         second += first
         first = second - first
         return result
     }
 }
 
-//fun fibonacci(): () -> Long {
-//    var first = 0L
-//    var second = 1L
-//    return fun(): Long {
-//        var result = second
-//        second += first
-//        first = second - first
-//        return result
-//    }
-//}
-//fun add(x: Int) = fun(y: Int) = x + y
 fun add(x: Int): (Int) -> Int {
-//    data class Person(val name: String, val age: Int)
+//data class Person(val name: String, val age: Int)
 
     return fun(y: Int): Int {
         return x + y
@@ -53,7 +43,7 @@ fun main(args: Array<String>) {
     val x = makeFun()
     x()
     x()
-    println("---")
+    println("********************************")
     val x1 = fibonacci()
     println(x1())
     println(x1())

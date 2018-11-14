@@ -8,6 +8,7 @@ package chapter03
 fun main(args: Array<String>) {
     println(add(1, 2))
     sum(11, 1)
+    add(1,1)
     printHello
 }
 

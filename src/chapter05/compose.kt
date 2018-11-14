@@ -11,7 +11,7 @@ var add5 = { i: Int -> i + 5 }
 var multipyBy2 = { i: Int -> i * 2 }
 
 fun main(args: Array<String>) {
-//    println(multipyBy2(add5(8)))
+   println(multipyBy2(add5(8)))
     val add5AndmultipyBy2 = add5 compose multipyBy2
     println(add5AndmultipyBy2(8))
 }

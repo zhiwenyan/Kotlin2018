@@ -5,10 +5,15 @@ package SingleTon
  * Data：9/29/2018-4:10 PM
  * @author: yanzhiwen
  */
-object  SingleTon
+object SingleTon
+
+class Person {
+    var age = 0
+}
+
 
 fun main(args: Array<String>) {
-    val  s=SingleTon
-    val  s1=SingleTon
-    println(s1==s)
+    val s = SingleTon
+    val s1 = SingleTon
+    println(s1 == s)
 }
