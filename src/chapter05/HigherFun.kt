@@ -18,6 +18,7 @@ fun main(args: Array<String>) {
     val newList = list.map {
         it * 2 + 3
     }
+
     newList.forEach(::println)
 
 
@@ -44,11 +45,11 @@ fun main(args: Array<String>) {
 
     println("***********let*************************")
 
-//    val person = findPerson()
-//    println(person?.age)
-//    println(person?.name)
+    val person = findPerson()
+    println(person?.age)
+    println(person?.name)
 
-    findPerson()?.let {(name,age) ->
+    findPerson()?.let { (name, age) ->
         println(name)
         println(age)
 

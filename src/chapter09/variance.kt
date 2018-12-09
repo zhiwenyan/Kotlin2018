@@ -1,7 +1,11 @@
 package chapter09
 
 /**
- * Description:
+ * Description:什么是型变
+ * 泛型实参的继承关系对泛型类型的影响
+ * 协变：泛型类型与实参的继承关系相同
+ * 逆变：泛型类型与实参的继承关系相反
+ * 不变：泛型类型没有关系
  * Data：2018/9/24
  * Author: Steven
  */

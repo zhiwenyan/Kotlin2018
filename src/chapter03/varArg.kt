@@ -14,6 +14,7 @@ fun main(vararg args: String) {
 }
 
 fun hello(vararg ints: Int, str: String) {
+    ints.forEach { println(it) }
     ints.forEach(::println)
     println(str)
 }

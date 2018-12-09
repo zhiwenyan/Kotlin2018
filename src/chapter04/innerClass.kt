@@ -1,5 +1,7 @@
 package chapter04
 
+import java.awt.event.ActionListener
+
 /**
  * Description: 内部类
  * 定义在内部的类
@@ -46,7 +48,7 @@ class View {
 fun main(args: Array<String>) {
     val inner = Outter().innerClass()
     inner.Hello()
-    val clz=Outter.innerClass1()
+    val clz = Outter.innerClass1()
     val view = View()
     //匿名内部类
     view.onClickListener = object : OnClickListener {
@@ -54,6 +56,13 @@ fun main(args: Array<String>) {
 
         }
     }
+
+
+    val listener = ActionListener {
+        println("clicked")
+    }
+
+
     //可以继承
     view.onClickListener = object : Outter(), OnClickListener {
         override fun onClick() {

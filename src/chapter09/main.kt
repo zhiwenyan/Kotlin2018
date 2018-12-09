@@ -19,10 +19,13 @@ fun <T : Comparable<T>> max(a: T, b: T): T {
 
 }
 
+fun <T> min(a: T): T {
+    return a
+}
+
 //类泛型
 //T : Number 泛型边界
 data class Complex<T : Number>(val a: T, val b: T) {
-
     override fun toString(): String {
         return "($a+$b i)"
     }

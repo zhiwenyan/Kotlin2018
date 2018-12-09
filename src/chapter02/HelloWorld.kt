@@ -10,8 +10,15 @@ val helloWorldArray: Array<Char> = arrayOf('H', 'e', 'l', 'l', 'o', 'W', 'o', 'r
 val helloWorldCharArray: CharArray = charArrayOf('H', 'e', 'l', 'l', 'o', 'W', 'o', 'r', 'l', 'd')
 val helloWorldLength: Int = helloWorld.length
 val helloWorldLengthLong: Long = helloWorldLength.toLong()
+val a:Int=2
+val a1=2
+val aa:Array<Int> = arrayOf(1)
+
+
+
 
 fun main(args: Array<String>) {
+
     println("final hello world: " + FINAL_HELLO_WORLD)
     println("assignable hello world: " + helloWorld)
     println("hello world from nullable type: " + nullableHelloWorld)
