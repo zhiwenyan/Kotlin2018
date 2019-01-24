@@ -18,7 +18,6 @@ fun main(args: Array<String>) {
     val newList = list.map {
         it * 2 + 3
     }
-
     newList.forEach(::println)
 
 
@@ -45,11 +44,13 @@ fun main(args: Array<String>) {
 
     println("***********let*************************")
 
-    val person = findPerson()
-    println(person?.age)
-    println(person?.name)
-
-    findPerson()?.let { (name, age) ->
+//    val person = findPerson()
+//    println(person?.age)
+//    println(person?.name)
+//
+    //let扩展函数的实际上是一个作用域函数，当你需要去定义一个变量在一个特定的作用域范围内，let函数的是一个不错的选择；
+    // let函数另一个作用就是可以避免写一些判断null的操作。
+    findPerson()?.let {(name,age) ->
         println(name)
         println(age)
 
@@ -58,11 +59,16 @@ fun main(args: Array<String>) {
         person.work()
         println(person.age)
     }
-
+    //apply
     findPerson()?.apply {
         work()
         println(age)
     }
+
+//   with( findPerson()) {
+//        work()
+//        println(age)
+//    }
 }
 
 fun findPerson(): Person? {
