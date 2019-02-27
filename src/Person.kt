@@ -1,4 +1,14 @@
+
+
+
+
 data class Person(
-        val name: String,
-        val age: Int
+        var name: String,
+        var age: Int
 )
+
+fun main(args: Array<String>) {
+    val person=Person("ss",23)
+
+
+}
