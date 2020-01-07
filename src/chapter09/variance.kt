@@ -36,5 +36,4 @@ interface ProductionConsumer<T> {
 }
 
 fun main(args: Array<String>) {
-
 }

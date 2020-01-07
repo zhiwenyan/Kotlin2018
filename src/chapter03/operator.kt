@@ -27,8 +27,17 @@ class Complex(var real: Double, var imaginary: Double) {
     }
 }
 
+data class Point(val x: Int, val y: Int)
+
+operator fun Point.plus(point: Point) = Point(x + point.x, y + point.y)
+
 fun main(args: Array<String>) {
     val c1 = Complex(1.1, 2.0)
     val c2 = Complex(1.2, 2.2)
     println(c1 + c2)
+    val a = 1
+    a.plus(2)
+    val first = Point(1, 2)
+    val second = Point(2, 2)
+    print(first + second)
 }

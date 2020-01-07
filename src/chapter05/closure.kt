@@ -20,6 +20,17 @@ fun makeFun(): () -> Unit {
     }
 }
 
+fun add(): () -> Int {
+    var first = 0
+    var second = 0
+    return fun(): Int {
+        val result = second
+        second += first
+        first = second - first
+        return result
+    }
+}
+
 fun fibonacci(): () -> Long {
     var first = 0L
     var second = 1L
@@ -29,6 +40,13 @@ fun fibonacci(): () -> Long {
         first = second - first
         return result
     }
+}
+
+fun ff(): () -> Long {
+    return fun(): Long {
+        return 10L;
+    }
+
 }
 
 fun add(x: Int): (Int) -> Int {

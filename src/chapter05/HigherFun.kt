@@ -1,5 +1,7 @@
 package chapter05
 
+import java.util.concurrent.locks.Lock
+
 
 /**
  * Description:map
@@ -18,6 +20,8 @@ fun main(args: Array<String>) {
     val newList = list.map {
         it * 2 + 3
     }
+    args.run { }
+
     newList.forEach(::println)
 
 
@@ -40,7 +44,10 @@ fun main(args: Array<String>) {
     println(factorial(6))
 
     println("************filter**********************")
-    (0..6).map(::factorial).filter { it % 2 == 1 }
+
+    (0..6).map(::factorial).filter {
+        it % 2 == 1
+    }
 
     println("***********let*************************")
 
@@ -50,25 +57,35 @@ fun main(args: Array<String>) {
 //
     //let扩展函数的实际上是一个作用域函数，当你需要去定义一个变量在一个特定的作用域范围内，let函数的是一个不错的选择；
     // let函数另一个作用就是可以避免写一些判断null的操作。
-    findPerson()?.let {(name,age) ->
+    findPerson()?.let { (name, age) ->
         println(name)
         println(age)
 
     }
-    findPerson()?.let { person ->
-        person.work()
-        println(person.age)
+    findPerson()?.let { it ->
+        it.work()
+        println(it.age)
     }
     //apply
     findPerson()?.apply {
         work()
         println(age)
     }
+    findPerson()?.run {
 
-//   with( findPerson()) {
+    }
+    findPerson()?.also { it ->
+        print(it.age)
+    }
+    run {
+
+    }
+
+//    with(findPerson()) {
 //        work()
 //        println(age)
 //    }
+
 }
 
 fun findPerson(): Person? {
@@ -78,5 +95,42 @@ fun findPerson(): Person? {
 fun factorial(n: Int): Int {
     if (n == 0) return 1
     return (1..n).reduce { acc, i -> acc * i }
+}
+
+//在Kotlin中，高阶函数即指：将函数用作一个函数的参数或者返回值的函数。
+fun <T> lock(lock: Lock, body: () -> T): T {
+    lock.lock()
+    try {
+        return body()
+    } finally {
+        lock.unlock()
+    }
+}
+
+private fun resultByOpt(num1: Int, num2: Int, result: (Int, Int) -> Int): Int {
+    return result(num1, num2)
+}
+
+private fun testDemo() {
+    val result1 = resultByOpt(1, 2) { num1, num2 ->
+        num1 + num2
+    }
+
+    val result2 = resultByOpt(3, 4) { num1, num2 ->
+        num1 - num2
+    }
+
+    val result3 = resultByOpt(5, 6) { num1, num2 ->
+        num1 * num2
+    }
+
+    val result4 = resultByOpt(6, 3) { num1, num2 ->
+        num1 / num2
+    }
+
+    println("result1 = $result1")
+    println("result2 = $result2")
+    println("result3 = $result3")
+    println("result4 = $result4")
 }
 

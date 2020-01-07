@@ -12,12 +12,22 @@ package chapter04
  */
 data class Country(val id: Int, val name: String)
 
+class User( name: String) {
+    init {
+        println(name)
+    }
+
+    override fun toString(): String {
+        return super.toString()
+    }
+}
+
 fun main(args: Array<String>) {
     val china = Country(0, "中国")
     println(china)
     println(china.component1())
     println(china.component2())
-    val(id,name)=china
+    val (id, name) = china
     println(id)
     println(name)
 }
