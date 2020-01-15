@@ -20,4 +20,6 @@ class Person() {
 fun main(args: Array<String>) {
     val person=Person()
     println(person.age)
+    val a:Int
+    a=1
 }

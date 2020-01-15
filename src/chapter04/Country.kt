@@ -12,7 +12,8 @@ package chapter04
  */
 data class Country(val id: Int, val name: String)
 
-class User( name: String) {
+class User(   name: String) {
+    var age:Int=0
     init {
         println(name)
     }

@@ -12,11 +12,9 @@ fun main(args: Array<String>) {
     Executors.newCachedThreadPool().submit {
         println("Hello")
     }
-    val list= listOf("hello","world")
-    val hashMap=HashMap<Int,String>()
-    val map1= mapOf(1 to "2",2 to "2")
-
-
+    val list = listOf("hello", "world")
+    val hashMap = HashMap<Int, String>()
+    val map1 = mapOf(1 to "2", 2 to "2")
 
 
 }

@@ -8,8 +8,10 @@ package chapter03
 fun main(args: Array<String>) {
     println(add(1, 2))
     sum(11, 1)
+    sum(1,1)
     add(1, 1)
     printHello
+    sum3(1,1)
 
     args.forEach { it ->
         print(it)
@@ -20,13 +22,13 @@ fun main(args: Array<String>) {
 }
 
 //显示类型声明
-val sum1: (Int, Int) -> Int = { arg1, arg2 -> arg1 + arg2 }
+val sum1: (Int, Int) -> Int = {  arg1, arg2 -> arg1 + arg2 }
 
 val action: () -> Unit = { println(42) }
 
 val action1 = { println(42) }
 
-val sum = { arg1: Int, arg2: Int -> arg1 + arg2 }
+val sum3 ={ arg1: Int, arg2: Int -> arg1 + arg2 }
 
 val add = { arg1: Int, arg2: Int ->
     println("$arg1+$arg2=${arg1 + arg2}")
