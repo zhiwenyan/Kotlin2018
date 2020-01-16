@@ -86,10 +86,10 @@ fun main(args: Array<String>) {
 
     }
 
-//    with(findPerson()) {
-//        work()
-//        println(age)
-//    }
+    with(findPerson()) {
+        this?.work()
+        println(this?.age)
+    }
 
 }
 

@@ -34,4 +34,5 @@ data class Complex<T : Number>(val a: T, val b: T) {
 //
 inline fun <reified T> testGenerics() {
     println(T::class.java)
+
 }

@@ -63,7 +63,8 @@ fun main(args: Array<String>) {
     //基本类型的转换
     val anInt: Int = 5
     val anLong: Long = anInt.toLong()
-
+    val  anInt1:Int =6
+    println(anInt==anInt1)
     //字符
     val string: String = "Hello"
     val fromChars: String = String(charArrayOf('H', 'e', 'l', 'l', 'o'))
@@ -78,4 +79,6 @@ fun main(args: Array<String>) {
 
     val sayHello: String = "Hello \"Trump\""
     println(sayHello)
+
+    //编译常量和运行时常量
 }
